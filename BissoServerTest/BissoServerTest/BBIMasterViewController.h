@@ -1,0 +1,25 @@
+//
+//  BBIMasterViewController.h
+//  ClassTester
+//
+//  Created by Sim iPad on 30.04.12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class BBIDetailViewController;
+@class BBIAccountEditorViewController;
+
+@interface BBIMasterViewController : UITableViewController
+
+@property (strong, nonatomic) BBIDetailViewController *detailViewController;
+@property (strong, nonatomic) BBIAccountEditorViewController *accountEditorPopup;
+
+- (IBAction)addService:(NSMutableDictionary *) obj sender:(id)sender;
+- (IBAction)clearSelection:(id)sender;
+- (IBAction)doSomething:(id)sender;
+
+- (NSDictionary *) serviceForName: (NSString *)serviceName;
+
+@end
