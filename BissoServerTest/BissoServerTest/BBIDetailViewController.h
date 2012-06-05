@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BBIMasterViewController.h"
+#import "BBIAuthenticatorDelegate.h"
 
-@interface BBIDetailViewController : UIViewController <UISplitViewControllerDelegate, UIWebViewDelegate>
+@interface BBIDetailViewController : UIViewController <UISplitViewControllerDelegate, UIWebViewDelegate, BBIAuthenticatorDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *detailItem;
 

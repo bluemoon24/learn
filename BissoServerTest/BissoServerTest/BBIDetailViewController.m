@@ -36,15 +36,16 @@ BBIBissoAuthenticator *_bissoAuth;
     }
 
     if (self.masterPopoverController != nil) {
-        [(UIPopoverController *) self.masterPopoverController dismissPopoverAnimated:YES];
+// to be fixed        [(UIPopoverController *) self.masterPopoverController dismissPopoverAnimated:YES];
     }        
 }
 
 - (void)configureView
 {
-    BBIBissoAuthenticator *bisso;
+//    BBIBissoAuthenticator *bisso;
     // Update the user interface for the detail item.
     if (self.detailItem) { 
+        NSMutableString *urlString = [[_detailItem valueForKey:@"url"] mutableCopy];
        if ([[[self detailItem] valueForKey:@"bissoAuth"] boolValue])
         {
             NSURLCredential *bissoCredential;
@@ -54,24 +55,26 @@ BBIBissoAuthenticator *_bissoAuth;
                 bissoCredential = [NSURLCredential credentialWithUser:[bissoService valueForKey:@"user"]
                                                        password:[bissoService valueForKey:@"pass"]
                                                     persistence:NSURLCredentialPersistenceForSession];
+
+                NSURL *bissoUrl = [NSURL URLWithString:[bissoService valueForKey:@"url"]];
+
+                _bissoAuth = [[BBIBissoAuthenticator alloc] initWithBissoUrlAndCredential:bissoUrl:bissoCredential];
                 
-                NSURL *bissoUrl = [bissoService valueForKey:@"url"];
+                [_bissoAuth setDelegate:self];
 
-                bisso = [[BBIBissoAuthenticator alloc] initWithBissoUrlAndCredential:bissoUrl:bissoCredential];
-
-                [bisso loadData];
+                [_bissoAuth loadData];
             }
             else 
             {
                     NSLog(@"Error: Bisso Service not found.");
             }
-
         }
-        _theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[_detailItem valueForKey:@"url"]] 
-                                       cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                   timeoutInterval:60.0];
-        
-       [self loadData:_theRequest];
+       else {
+           _theRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]  cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
+           
+           [self loadData:_theRequest];
+
+       }
     }
 }
 
@@ -191,29 +194,29 @@ BBIBissoAuthenticator *_bissoAuth;
     }
 }
 
-/*
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
-{
-    // This method is called when the server has determined that it
-    // has enough information to create the NSURLResponse.
-    
-    // It can be called multiple times, for example in the case of a
-    // redirect, so each time we reset the data.
-    
-    if ([response statusCode] == 200)
-    {
-        [self.webView loadRequest:_theRequest];
-    }
-    else if ([response statusCode] == 401)
-    {
-        // get authentication
-        NSDictionary *headers = [response allHeaderFields];
-        NSString *authType = [headers valueForKey:@"Www-Authenticate"];
-        NSLog(@"Received challenge: %u %@", [response statusCode], authType);
-        
-    }
+#pragma mark - BBIAuthenticatorDelegate
 
- }
-*/
+- (void)didReceiveTicket:(NSDictionary *)ticket
+{
+    NSMutableString *urlString = [[_detailItem valueForKey:@"url"] mutableCopy];
+                
+     [urlString appendString:@"?cwid="];
+     [urlString appendString:[ticket objectForKey:@"cwid"]];
+     
+     [urlString appendString:@"&ticket="];
+     [urlString appendString:[ticket objectForKey:@"ticket"]];
+     
+     [urlString appendString:@"&issuer="];
+     [urlString appendString:[ticket objectForKey:@"issuer"]];
+     
+     [urlString appendString:@"&instanceid="];
+     [urlString appendString:[ticket objectForKey:@"instanceID"]];
+    
+    _theRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]  cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
+    
+    [self loadData:_theRequest];
+
+
+}
 
 @end

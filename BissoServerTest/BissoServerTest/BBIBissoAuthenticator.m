@@ -7,11 +7,14 @@
 //
 
 #import "BBIBissoAuthenticator.h"
-#import "BBIBissoParser.h"
 
 @implementation BBIBissoAuthenticator
+
+@synthesize delegate;
 @synthesize bissoServer = _bissoServer;
 @synthesize bissoCredential = _bissoCredential;
+
+@synthesize ticket = _ticket;
 
 - (id) initWithBissoUrl:(NSURL *)url
 {
@@ -32,9 +35,9 @@
 - (void) loadData
 {
     // Create the request.
-    NSURLRequest *theRequest=[NSURLRequest  requestWithURL: [self bissoServer]
-                                              cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                          timeoutInterval:60.0];
+    
+    NSURLRequest *theRequest= [[NSURLRequest alloc] initWithURL:[self bissoServer] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
+
     // create the connection with the request
     // and start loading the data
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
@@ -48,20 +51,21 @@
 }
 
 
-- (BOOL) parseURL:(NSString *)url
+- (BOOL) parse
 {    
     BOOL success;
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
-    
-    BBIBissoParser *bissoParser = [[BBIBissoParser alloc] init];
-    
-    [parser setDelegate:bissoParser];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[self bissoServer]];
+        
+    [parser setDelegate:self];
     success = [parser parse];
+    
+    NSLog(@"bisso:Parser done.");    
+
     return success;
     
 }
 
-#pragma mark - Bisso Connection
+#pragma mark - NSURLConnection
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
 {
@@ -76,7 +80,8 @@
     if ([challenge previousFailureCount] == 0) {
        [[challenge sender] useCredential:self.bissoCredential
                forAuthenticationChallenge:challenge];
-        [self loadData];
+//        [self loadData];
+        if (![self parse]) NSLog(@"Parser error");
         
     } else {
         [[challenge sender] cancelAuthenticationChallenge:challenge];
@@ -104,6 +109,31 @@
         NSString *authType = [headers valueForKey:@"Www-Authenticate"];
         NSLog(@"bisso:Received challenge with authType: %@", authType);
 
+    }
+}
+
+#pragma mark - NSXMLParser
+
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSMutableDictionary *)attributeDict 
+{
+    
+    if ( [elementName isEqualToString:@"bisso:auth"]) {
+        _ticket = [[NSMutableDictionary alloc] initWithDictionary:attributeDict copyItems:YES];        
+    }
+    
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    [_ticket setValue:string forKey:@"ticket"];
+}
+
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    if ( [elementName isEqualToString:@"bisso:auth"]) {
+    if (delegate) [delegate didReceiveTicket:_ticket];
     }
 }
 
