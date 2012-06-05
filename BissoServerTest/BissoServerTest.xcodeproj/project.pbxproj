@@ -19,10 +19,10 @@
 		27A721DA15796CE300907DBC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721D915796CE300907DBC /* Security.framework */; };
 		27A721DF15796D7400907DBC /* BBIAccountEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A721DD15796D7400907DBC /* BBIAccountEditorViewController.m */; };
 		27A721E015796D7400907DBC /* BBIBissoAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A721DE15796D7400907DBC /* BBIBissoAuthenticator.m */; };
-		27A721EE1579702E00907DBC /* BBIBissoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A721ED1579702E00907DBC /* BBIBissoParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272839C2157E98780077A7E1 /* BBIAuthenticatorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBIAuthenticatorDelegate.h; sourceTree = "<group>"; };
 		27A721B015796AB100907DBC /* BissoServerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BissoServerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A721B415796AB100907DBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27A721B615796AB100907DBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,10 +41,8 @@
 		27A721D415796AE700907DBC /* BBIAccountEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIAccountEditorViewController.h; sourceTree = "<group>"; };
 		27A721D915796CE300907DBC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		27A721DB15796D7400907DBC /* BBIBissoAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIBissoAuthenticator.h; sourceTree = "<group>"; };
-		27A721DC15796D7400907DBC /* BBIBissoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIBissoParser.h; sourceTree = "<group>"; };
 		27A721DD15796D7400907DBC /* BBIAccountEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIAccountEditorViewController.m; sourceTree = "<group>"; };
 		27A721DE15796D7400907DBC /* BBIBissoAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIBissoAuthenticator.m; sourceTree = "<group>"; };
-		27A721ED1579702E00907DBC /* BBIBissoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIBissoParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,14 +91,13 @@
 		27A721BA15796AB100907DBC /* BissoServerTest */ = {
 			isa = PBXGroup;
 			children = (
-				27A721ED1579702E00907DBC /* BBIBissoParser.m */,
 				27A721D415796AE700907DBC /* BBIAccountEditorViewController.h */,
 				27A721DD15796D7400907DBC /* BBIAccountEditorViewController.m */,
 				27A721C315796AB100907DBC /* BBIAppDelegate.h */,
 				27A721C415796AB100907DBC /* BBIAppDelegate.m */,
 				27A721DB15796D7400907DBC /* BBIBissoAuthenticator.h */,
+				272839C2157E98780077A7E1 /* BBIAuthenticatorDelegate.h */,
 				27A721DE15796D7400907DBC /* BBIBissoAuthenticator.m */,
-				27A721DC15796D7400907DBC /* BBIBissoParser.h */,
 				27A721CC15796AB100907DBC /* BBIDetailViewController.h */,
 				27A721CD15796AB100907DBC /* BBIDetailViewController.m */,
 				27A721C915796AB100907DBC /* BBIMasterViewController.h */,
@@ -191,7 +188,6 @@
 				27A721CE15796AB100907DBC /* BBIDetailViewController.m in Sources */,
 				27A721DF15796D7400907DBC /* BBIAccountEditorViewController.m in Sources */,
 				27A721E015796D7400907DBC /* BBIBissoAuthenticator.m in Sources */,
-				27A721EE1579702E00907DBC /* BBIBissoParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
