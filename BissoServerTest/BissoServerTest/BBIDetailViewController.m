@@ -199,8 +199,12 @@ BBIBissoAuthenticator *_bissoAuth;
 - (void)didReceiveTicket:(NSDictionary *)ticket
 {
     NSMutableString *urlString = [[_detailItem valueForKey:@"url"] mutableCopy];
-                
-     [urlString appendString:@"?cwid="];
+
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+     [urlString appendString:([url query] ? @"&" : @"?")];
+    
+     [urlString appendString:@"cwid="];
      [urlString appendString:[ticket objectForKey:@"cwid"]];
      
      [urlString appendString:@"&ticket="];
@@ -211,7 +215,7 @@ BBIBissoAuthenticator *_bissoAuth;
      
      [urlString appendString:@"&instanceid="];
      [urlString appendString:[ticket objectForKey:@"instanceID"]];
-    
+
     _theRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]  cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
     
     [self loadData:_theRequest];
