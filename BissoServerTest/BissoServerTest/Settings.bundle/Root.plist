@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Authentication Services</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Select Service</string>
+			<key>Key</key>
+			<string>PrimaryAuthService</string>
+			<key>DefaultValue</key>
+			<string>Bisso</string>
+			<key>Titles</key>
+			<array>
+				<string>Bisso</string>
+				<string>Fake Bisso</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>bisso</string>
+				<string>fbisso</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>File</key>
+			<string>ConfigAuthServices</string>
+			<key>Title</key>
+			<string>Configure</string>
+			<key>Key</key>
+			<string>configAuth</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>

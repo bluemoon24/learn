@@ -9,6 +9,7 @@
 #import "BBIMasterViewController.h"
 #import "BBIDetailViewController.h"
 #import "BBIAccountEditorViewController.h"
+#import "BBIDemoPortlet.h"
 
 @interface BBIMasterViewController () {
     NSMutableArray *services;
@@ -54,7 +55,11 @@
         
     if (!services) {
         services = [[NSMutableArray alloc] init];
-    }    
+    }  
+    
+#pragma mark - temp only
+    
+    BBIDemoPortlet *portlet = [[BBIDemoPortlet alloc]init];
         
  }
 
