@@ -19,6 +19,9 @@
 		27A721DA15796CE300907DBC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721D915796CE300907DBC /* Security.framework */; };
 		27A721DF15796D7400907DBC /* BBIAccountEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A721DD15796D7400907DBC /* BBIAccountEditorViewController.m */; };
 		27A721E015796D7400907DBC /* BBIBissoAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A721DE15796D7400907DBC /* BBIBissoAuthenticator.m */; };
+		27AC04E01580AA42007CBE51 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27AC04DF1580AA42007CBE51 /* Settings.bundle */; };
+		27AC92D7157FF03600F29E61 /* BBIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AC92D6157FF03600F29E61 /* BBIDataManager.m */; };
+		27AC92DB157FF7AA00F29E61 /* BBIDemoPortlet.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AC92DA157FF7AA00F29E61 /* BBIDemoPortlet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,14 @@
 		27A721DB15796D7400907DBC /* BBIBissoAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIBissoAuthenticator.h; sourceTree = "<group>"; };
 		27A721DD15796D7400907DBC /* BBIAccountEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIAccountEditorViewController.m; sourceTree = "<group>"; };
 		27A721DE15796D7400907DBC /* BBIBissoAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIBissoAuthenticator.m; sourceTree = "<group>"; };
+		27AC04DF1580AA42007CBE51 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = BissoServerTest/Settings.bundle; sourceTree = "<group>"; };
+		27AC92D5157FF03600F29E61 /* BBIDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIDataManager.h; sourceTree = "<group>"; };
+		27AC92D6157FF03600F29E61 /* BBIDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIDataManager.m; sourceTree = "<group>"; };
+		27AC92D9157FF7AA00F29E61 /* BBIDemoPortlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIDemoPortlet.h; sourceTree = "<group>"; };
+		27AC92DA157FF7AA00F29E61 /* BBIDemoPortlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIDemoPortlet.m; sourceTree = "<group>"; };
+		27B0C4CF157FB5FD0044AE9C /* BBIDataManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBIDataManagerProtocol.h; path = /Users/lothar/Documents/work/iDeviceProjects/learn/BissoServerTest/BissoServerTest/BBIDataManagerProtocol.h; sourceTree = "<absolute>"; };
+		27B0C4D0157FBCD00044AE9C /* BBIDataServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBIDataServiceDelegate.h; sourceTree = "<group>"; };
+		27B0C4D4157FEB100044AE9C /* BBIBWRunQueryDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBIBWRunQueryDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +74,8 @@
 		27A721A515796AB000907DBC = {
 			isa = PBXGroup;
 			children = (
+				27AC04DF1580AA42007CBE51 /* Settings.bundle */,
+				27B0C4CE157FB5BE0044AE9C /* Data Manager */,
 				27A721BA15796AB100907DBC /* BissoServerTest */,
 				27A721B315796AB100907DBC /* Frameworks */,
 				27A721B115796AB100907DBC /* Products */,
@@ -91,6 +104,8 @@
 		27A721BA15796AB100907DBC /* BissoServerTest */ = {
 			isa = PBXGroup;
 			children = (
+				27AC92D9157FF7AA00F29E61 /* BBIDemoPortlet.h */,
+				27AC92DA157FF7AA00F29E61 /* BBIDemoPortlet.m */,
 				27A721D415796AE700907DBC /* BBIAccountEditorViewController.h */,
 				27A721DD15796D7400907DBC /* BBIAccountEditorViewController.m */,
 				27A721C315796AB100907DBC /* BBIAppDelegate.h */,
@@ -117,6 +132,19 @@
 				27A721C215796AB100907DBC /* BissoServerTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27B0C4CE157FB5BE0044AE9C /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				27AC92D5157FF03600F29E61 /* BBIDataManager.h */,
+				27AC92D6157FF03600F29E61 /* BBIDataManager.m */,
+				27B0C4CF157FB5FD0044AE9C /* BBIDataManagerProtocol.h */,
+				27B0C4D4157FEB100044AE9C /* BBIBWRunQueryDelegate.h */,
+				27B0C4D0157FBCD00044AE9C /* BBIDataServiceDelegate.h */,
+			);
+			name = "Data Manager";
+			path = BissoServerTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +200,7 @@
 			files = (
 				27A721BF15796AB100907DBC /* InfoPlist.strings in Resources */,
 				27A721C815796AB100907DBC /* MainStoryboard.storyboard in Resources */,
+				27AC04E01580AA42007CBE51 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +217,8 @@
 				27A721CE15796AB100907DBC /* BBIDetailViewController.m in Sources */,
 				27A721DF15796D7400907DBC /* BBIAccountEditorViewController.m in Sources */,
 				27A721E015796D7400907DBC /* BBIBissoAuthenticator.m in Sources */,
+				27AC92D7157FF03600F29E61 /* BBIDataManager.m in Sources */,
+				27AC92DB157FF7AA00F29E61 /* BBIDemoPortlet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
