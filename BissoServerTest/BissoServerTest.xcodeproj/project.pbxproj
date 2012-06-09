@@ -15,8 +15,8 @@
 		2741DA4A1583B299003D55EB /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA491583B299003D55EB /* Unit.m */; };
 		2741DA4D1583B299003D55EB /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA4C1583B299003D55EB /* Filter.m */; };
 		2741DA5C1583D947003D55EB /* Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA5B1583D947003D55EB /* Value.m */; };
-		2741DA601583E952003D55EB /* BBIPortlet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA5F1583E952003D55EB /* BBIPortlet.m */; };
 		2741DA621583F80B003D55EB /* BBIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA611583F80B003D55EB /* BBIDataManager.m */; };
+		2741DA6B1583FC54003D55EB /* BBIPortlet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA6A1583FC54003D55EB /* BBIPortlet.m */; };
 		27A44BD115822D5A0045B3BF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A44BD015822D5A0045B3BF /* CoreData.framework */; };
 		27A721B515796AB100907DBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721B415796AB100907DBC /* UIKit.framework */; };
 		27A721B715796AB100907DBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721B615796AB100907DBC /* Foundation.framework */; };
@@ -52,10 +52,10 @@
 		2741DA4C1583B299003D55EB /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
 		2741DA5A1583D947003D55EB /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
 		2741DA5B1583D947003D55EB /* Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Value.m; sourceTree = "<group>"; };
-		2741DA5D1583E8B3003D55EB /* BBIPortletDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBIPortletDelegate.h; path = ../BBIPortletDelegate.h; sourceTree = "<group>"; };
-		2741DA5E1583E952003D55EB /* BBIPortlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBIPortlet.h; path = ../BBIPortlet.h; sourceTree = "<group>"; };
-		2741DA5F1583E952003D55EB /* BBIPortlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBIPortlet.m; path = ../BBIPortlet.m; sourceTree = "<group>"; };
 		2741DA611583F80B003D55EB /* BBIDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIDataManager.m; sourceTree = "<group>"; };
+		2741DA681583FC54003D55EB /* BBIPortlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIPortlet.h; sourceTree = "<group>"; };
+		2741DA691583FC54003D55EB /* BBIPortletDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIPortletDelegate.h; sourceTree = "<group>"; };
+		2741DA6A1583FC54003D55EB /* BBIPortlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIPortlet.m; sourceTree = "<group>"; };
 		27A44BD015822D5A0045B3BF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		27A721B015796AB100907DBC /* BissoServerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BissoServerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A721B415796AB100907DBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -156,9 +156,9 @@
 		27A721BA15796AB100907DBC /* BissoServerTest */ = {
 			isa = PBXGroup;
 			children = (
-				2741DA5D1583E8B3003D55EB /* BBIPortletDelegate.h */,
-				2741DA5E1583E952003D55EB /* BBIPortlet.h */,
-				2741DA5F1583E952003D55EB /* BBIPortlet.m */,
+				2741DA681583FC54003D55EB /* BBIPortlet.h */,
+				2741DA691583FC54003D55EB /* BBIPortletDelegate.h */,
+				2741DA6A1583FC54003D55EB /* BBIPortlet.m */,
 				27A721D415796AE700907DBC /* BBIAccountEditorViewController.h */,
 				27A721DD15796D7400907DBC /* BBIAccountEditorViewController.m */,
 				27A721C315796AB100907DBC /* BBIAppDelegate.h */,
@@ -284,8 +284,8 @@
 				2741DA4A1583B299003D55EB /* Unit.m in Sources */,
 				2741DA4D1583B299003D55EB /* Filter.m in Sources */,
 				2741DA5C1583D947003D55EB /* Value.m in Sources */,
-				2741DA601583E952003D55EB /* BBIPortlet.m in Sources */,
 				2741DA621583F80B003D55EB /* BBIDataManager.m in Sources */,
+				2741DA6B1583FC54003D55EB /* BBIPortlet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
