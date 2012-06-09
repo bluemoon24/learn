@@ -10,11 +10,11 @@
 #import <CoreData/CoreData.h>
 
 #import "BBIDataManagerProtocol.h"
+#import "BBIAuthenticatorDelegate.h"
 #import "BBIBWRunQueryDelegate.h"
 
-#import "BBIAuthenticatorDelegate.h"
-
 #import "Qresult.h"
+
 
 @interface BBIDataManager : NSObject <BBIDataManagerProtocol,BBIAuthenticatorDelegate, NSURLConnectionDelegate,NSXMLParserDelegate>
 

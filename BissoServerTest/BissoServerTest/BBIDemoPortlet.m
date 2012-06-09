@@ -7,7 +7,7 @@
 //
 
 #import "BBIDemoPortlet.h"
-#import "BBIDataManager.h"
+#import "DataManager/BBIDataManager.h"
 
 @implementation BBIDemoPortlet
 

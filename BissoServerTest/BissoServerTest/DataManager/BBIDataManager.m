@@ -9,6 +9,8 @@
 #import "BBIDataManager.h"
 #import "BBIBissoAuthenticator.h"
 #import "BBIBWQueryResultParserDelegate.h"
+#import "BBIBWRunQueryDelegate.h"
+
 #import "Qresult.h"
 
 

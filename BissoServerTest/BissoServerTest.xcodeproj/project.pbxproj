@@ -10,7 +10,6 @@
 		2741DA241583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA201583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m */; };
 		2741DA251583B198003D55EB /* BBIBWQueryResultParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA211583B198003D55EB /* BBIBWQueryResultParserDelegate.m */; };
 		2741DA261583B198003D55EB /* PortletEngine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA221583B198003D55EB /* PortletEngine.xcdatamodeld */; };
-		2741DA291583B1D0003D55EB /* BBIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA281583B1D0003D55EB /* BBIDataManager.m */; };
 		2741DA3E1583B299003D55EB /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA3D1583B299003D55EB /* Variable.m */; };
 		2741DA411583B299003D55EB /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA401583B299003D55EB /* Item.m */; };
 		2741DA441583B299003D55EB /* Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA431583B299003D55EB /* Value.m */; };
@@ -283,7 +282,6 @@
 				2741DA241583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m in Sources */,
 				2741DA251583B198003D55EB /* BBIBWQueryResultParserDelegate.m in Sources */,
 				2741DA261583B198003D55EB /* PortletEngine.xcdatamodeld in Sources */,
-				2741DA291583B1D0003D55EB /* BBIDataManager.m in Sources */,
 				2741DA3E1583B299003D55EB /* Variable.m in Sources */,
 				2741DA411583B299003D55EB /* Item.m in Sources */,
 				2741DA441583B299003D55EB /* Value.m in Sources */,
