@@ -32,9 +32,9 @@ NSString *myService = @"FakeBWRunQuery";
 
 - (NSString *)describePortlet
 {
-    NSString *describe;
-    describe = [describe initWithString:[super description]];
-    describe = [describe stringByAppendingFormat:@"Service: %@\nqResult:%@", myService, dm.qResult];
+    NSMutableString *describe;
+    describe = [[super description] mutableCopy];
+    describe = [[describe stringByAppendingFormat:@"Service: %@\nqResult:%@", myService, dm.qResult] mutableCopy];
     return describe;
 }
 
@@ -47,6 +47,15 @@ NSString *myService = @"FakeBWRunQuery";
               initWithObjectsAndKeys: @"S_SOA_DUMPDP21D_Q9102",@"queryName", nil ];
     return params;
 }
+
+- (void) serviceDidFinishLoading: (NSString *)service result:(Qresult *)qResult
+{
+    NSLog(@"DemoPortlet: Service did finish loading");
+    
+    [super serviceDidFinishLoading:service result:qResult];
+
+}
+
 
 
 @end
