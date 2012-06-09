@@ -12,12 +12,10 @@
 @interface BBIBissoAuthenticator : NSObject  <NSXMLParserDelegate>
 
 @property (nonatomic, retain) id delegate;
-@property (nonatomic, retain) NSURL *bissoServer;
-@property (nonatomic, retain) NSURLCredential *bissoCredential;
 @property (nonatomic, retain) NSDictionary *ticket;
 
-- (id) initWithBissoUrl: (NSURL *)url;
-- (id) initWithBissoUrlAndCredential: (NSURL *)url :(NSURLCredential *)credential;
+- (id) initWithDelegateAndLoad:(id)delegate;
+
 - (void) loadData;
 
 @end

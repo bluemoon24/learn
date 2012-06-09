@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="0.2" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Filter" representedClassName="Filter" syncable="YES">
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="qresult" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Qresult" inverseName="filters" inverseEntity="Qresult" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="header" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="qresult" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Qresult" inverseName="items" inverseEntity="Qresult" syncable="YES"/>
+        <relationship name="values" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Value" inverseName="item" inverseEntity="Value" syncable="YES"/>
+    </entity>
+    <entity name="Qresult" representedClassName="Qresult" syncable="YES">
+        <attribute name="requestID" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="requestURL" attributeType="String" syncable="YES"/>
+        <relationship name="filters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Filter" inverseName="qresult" inverseEntity="Filter" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="qresult" inverseEntity="Item" syncable="YES"/>
+        <relationship name="units" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Unit" inverseName="qresult" inverseEntity="Unit" syncable="YES"/>
+        <relationship name="variables" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Variable" inverseName="qresult" inverseEntity="Variable" syncable="YES"/>
+    </entity>
+    <entity name="Unit" representedClassName="Unit" syncable="YES">
+        <attribute name="dimension" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="qresult" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Qresult" inverseName="units" inverseEntity="Qresult" syncable="YES"/>
+    </entity>
+    <entity name="Value" representedClassName="Value" syncable="YES">
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="values" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Variable" representedClassName="Variable" syncable="YES">
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="qresult" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Qresult" inverseName="variables" inverseEntity="Qresult" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Filter" positionX="-162" positionY="-84" width="128" height="120"/>
+        <element name="Item" positionX="261" positionY="-18" width="128" height="90"/>
+        <element name="Qresult" positionX="225" positionY="-189" width="128" height="135"/>
+        <element name="Unit" positionX="394" positionY="156" width="128" height="105"/>
+        <element name="Variable" positionX="61" positionY="12" width="128" height="120"/>
+        <element name="Value" positionX="36" positionY="207" width="128" height="90"/>
+    </elements>
+</model>

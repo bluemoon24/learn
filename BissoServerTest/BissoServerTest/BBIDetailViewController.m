@@ -20,13 +20,6 @@
 @synthesize webView = _webView;
 @synthesize masterPopoverController = _masterPopoverController;
 
-NSString *kPrimaryAuthService = @"PrimaryAuthService";
-NSString *primaryAuthService;
-NSString *bissoUrlString = @"http://bisso.bms.cnb/authenticate/whoami.php";
-NSString *fbissoUrlString = @"http://test.totaltrivial.de/BissoTestServer/authenticate/whoami.php";
-NSURLCredential *authCredential;
-NSURL *authUrl;
-
 NSURLRequest *_theRequest;
 
 BBIBissoAuthenticator *_bissoAuth;
@@ -47,102 +40,24 @@ BBIBissoAuthenticator *_bissoAuth;
     }        
 }
 
-- (void)setupByPreferences
-{
-    NSString *testValue = [[NSUserDefaults standardUserDefaults] stringForKey:kPrimaryAuthService];
-	if (testValue == nil)
-	{
-		// no default values have been set, create them here based on what's in our Settings bundle info
-		//
-		NSString *pathStr = [[NSBundle mainBundle] bundlePath];
-		NSString *settingsBundlePath = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
-		NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
-        
-		NSDictionary *settingsDict = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-		NSArray *prefSpecifierArray = [settingsDict objectForKey:@"PreferenceSpecifiers"];
-        		
-		NSDictionary *prefItem;
-		for (prefItem in prefSpecifierArray)
-		{
-			NSString *keyValueStr = [prefItem objectForKey:@"Key"];
-			id defaultValue = [prefItem objectForKey:@"DefaultValue"];
-			
-			if ([keyValueStr isEqualToString:kPrimaryAuthService])
-			{
-				primaryAuthService = defaultValue;
-			}
-		}
-        
-		// since no default values have been set (i.e. no preferences file created), create it here		
-/*		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     firstNameDefault, kFirstNameKey,
-                                     lastNameDefault, kLastNameKey,
-                                     nameColorDefault, kNameColorKey,
-                                     backgroundColorDefault, kBackgroundColorKey,
-                                     nil];
-        
-		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
-		[[NSUserDefaults standardUserDefaults] synchronize];
- */
-	}
-	
-	// we're ready to go, so lastly set the key preference values
-	primaryAuthService = [[NSUserDefaults standardUserDefaults] stringForKey:kPrimaryAuthService];
-
-    NSString *authUrlString;
-    
-    NSString *authUser;
-    NSString *authPass; //  This is a hack. We should move to secure keychain storage.
-    
-    if ([primaryAuthService isEqualToString:@"bisso"])
-    {
-        authUrlString = [[NSUserDefaults standardUserDefaults] stringForKey:@"bissoUrl"];
-        if (!authUrlString) authUrlString = bissoUrlString;
-        authUser = [[NSUserDefaults standardUserDefaults] stringForKey:@"bissoUser"];
-        authPass = [[NSUserDefaults standardUserDefaults] stringForKey:@"bissoPass"];
-     }
-    else if ([primaryAuthService isEqualToString:@"fbisso"]) {
-        authUrlString = [[NSUserDefaults standardUserDefaults] stringForKey:@"fakeBissoUrl"];
-        if (!authUrlString) authUrlString = fbissoUrlString; 
-        authUser = [[NSUserDefaults standardUserDefaults] stringForKey:@"fakeBissoUser"];
-        authPass = [[NSUserDefaults standardUserDefaults] stringForKey:@"fakeBissoPass"];
-    }
-    else {
-        NSLog(@"Unknown service %@:", primaryAuthService);
-        return;
-    }
-    
-    
-     authCredential = [NSURLCredential credentialWithUser:authUser
-                                                     password:authPass
-                                                  persistence:NSURLCredentialPersistenceForSession];
-
-    authUrl = [NSURL URLWithString:authUrlString];
-}
-
 - (void)configureView
 {
-//    BBIBissoAuthenticator *bisso;
-    // Update the user interface for the detail item.
-
-    [self setupByPreferences];
     
     if (self.detailItem) { 
         NSMutableString *urlString = [[_detailItem valueForKey:@"url"] mutableCopy];
 
        if ([[[self detailItem] valueForKey:@"bissoAuth"] boolValue])
         {
-                _bissoAuth = [[BBIBissoAuthenticator alloc] initWithBissoUrlAndCredential:authUrl:authCredential];
-                
-                [_bissoAuth setDelegate:self];
-
-                [_bissoAuth loadData];
+            _bissoAuth = [BBIBissoAuthenticator alloc];
+            _bissoAuth = [_bissoAuth initWithDelegateAndLoad:self];
+            if (!_bissoAuth) 
+                NSLog(@"Can't get Bisso configuration");
         }
-       else {
+       else
+       {
            _theRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]  cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
            
            [self loadData:_theRequest];
-
        }
     }
 }
@@ -233,6 +148,8 @@ BBIBissoAuthenticator *_bissoAuth;
         return NO;
     }   
 }
+
+#pragma mark - NSURLConnection
 
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace

@@ -18,7 +18,7 @@ BBIDataManager *dm;
     self = [super init];
     dm = [[BBIDataManager alloc]init];
     dm.delegate = self;
-    [dm getData:@"BWRunQuery"];
+    [dm getData:@"FakeBWRunQuery"];
     return self;
 }
 

@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2741DA241583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA201583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m */; };
-		2741DA251583B198003D55EB /* BBIBWQueryResultParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA211583B198003D55EB /* BBIBWQueryResultParserDelegate.m */; };
-		2741DA261583B198003D55EB /* PortletEngine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA221583B198003D55EB /* PortletEngine.xcdatamodeld */; };
-		2741DA291583B1D0003D55EB /* BBIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA281583B1D0003D55EB /* BBIDataManager.m */; };
-		2741DA3E1583B299003D55EB /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA3D1583B299003D55EB /* Variable.m */; };
-		2741DA411583B299003D55EB /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA401583B299003D55EB /* Item.m */; };
-		2741DA441583B299003D55EB /* Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA431583B299003D55EB /* Value.m */; };
-		2741DA471583B299003D55EB /* Qresult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA461583B299003D55EB /* Qresult.m */; };
-		2741DA4A1583B299003D55EB /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA491583B299003D55EB /* Unit.m */; };
-		2741DA4D1583B299003D55EB /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA4C1583B299003D55EB /* Filter.m */; };
 		27A44BD115822D5A0045B3BF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A44BD015822D5A0045B3BF /* CoreData.framework */; };
+		27A44C1615825AB00045B3BF /* PortletEngine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C1415825AB00045B3BF /* PortletEngine.xcdatamodeld */; };
+		27A44C2E158263C70045B3BF /* BBIBWQueryResultParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C2D158263C70045B3BF /* BBIBWQueryResultParserDelegate.m */; };
+		27A44C341582A2EB0045B3BF /* BBIBWQueryResultFilterParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C331582A2EB0045B3BF /* BBIBWQueryResultFilterParserDelegate.m */; };
+		27A44C89158377D50045B3BF /* Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C88158377D50045B3BF /* Value.m */; };
+		27A44C8C158377D50045B3BF /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C8B158377D50045B3BF /* Item.m */; };
+		27A44C8F158377D60045B3BF /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C8E158377D60045B3BF /* Unit.m */; };
+		27A44C92158377D60045B3BF /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C91158377D60045B3BF /* Filter.m */; };
+		27A44C95158377D60045B3BF /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C94158377D60045B3BF /* Variable.m */; };
+		27A44C98158377D60045B3BF /* Qresult.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A44C97158377D60045B3BF /* Qresult.m */; };
 		27A721B515796AB100907DBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721B415796AB100907DBC /* UIKit.framework */; };
 		27A721B715796AB100907DBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721B615796AB100907DBC /* Foundation.framework */; };
 		27A721B915796AB100907DBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721B815796AB100907DBC /* CoreGraphics.framework */; };
@@ -37,26 +36,25 @@
 
 /* Begin PBXFileReference section */
 		272839C2157E98780077A7E1 /* BBIAuthenticatorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBIAuthenticatorDelegate.h; sourceTree = "<group>"; };
-		2741DA1E1583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIBWQueryResultFilterParserDelegate.h; sourceTree = "<group>"; };
-		2741DA1F1583B198003D55EB /* BBIBWQueryResultParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIBWQueryResultParserDelegate.h; sourceTree = "<group>"; };
-		2741DA201583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIBWQueryResultFilterParserDelegate.m; sourceTree = "<group>"; };
-		2741DA211583B198003D55EB /* BBIBWQueryResultParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIBWQueryResultParserDelegate.m; sourceTree = "<group>"; };
-		2741DA231583B198003D55EB /* PortletEngine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortletEngine.xcdatamodel; sourceTree = "<group>"; };
-		2741DA271583B1D0003D55EB /* BBIDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIDataManager.h; sourceTree = "<group>"; };
-		2741DA281583B1D0003D55EB /* BBIDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIDataManager.m; sourceTree = "<group>"; };
-		2741DA3C1583B299003D55EB /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
-		2741DA3D1583B299003D55EB /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
-		2741DA3F1583B299003D55EB /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		2741DA401583B299003D55EB /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		2741DA421583B299003D55EB /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
-		2741DA431583B299003D55EB /* Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Value.m; sourceTree = "<group>"; };
-		2741DA451583B299003D55EB /* Qresult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Qresult.h; sourceTree = "<group>"; };
-		2741DA461583B299003D55EB /* Qresult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Qresult.m; sourceTree = "<group>"; };
-		2741DA481583B299003D55EB /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
-		2741DA491583B299003D55EB /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
-		2741DA4B1583B299003D55EB /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
-		2741DA4C1583B299003D55EB /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
 		27A44BD015822D5A0045B3BF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		27A44C1515825AB00045B3BF /* PortletEngine old.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PortletEngine old.xcdatamodel"; sourceTree = "<group>"; };
+		27A44C2C158263C70045B3BF /* BBIBWQueryResultParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBIBWQueryResultParserDelegate.h; path = DataManager/BBIBWQueryResultParserDelegate.h; sourceTree = "<group>"; };
+		27A44C2D158263C70045B3BF /* BBIBWQueryResultParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBIBWQueryResultParserDelegate.m; path = DataManager/BBIBWQueryResultParserDelegate.m; sourceTree = "<group>"; };
+		27A44C321582A2EB0045B3BF /* BBIBWQueryResultFilterParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBIBWQueryResultFilterParserDelegate.h; path = DataManager/BBIBWQueryResultFilterParserDelegate.h; sourceTree = "<group>"; };
+		27A44C331582A2EB0045B3BF /* BBIBWQueryResultFilterParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBIBWQueryResultFilterParserDelegate.m; path = DataManager/BBIBWQueryResultFilterParserDelegate.m; sourceTree = "<group>"; };
+		27A44C5015836C640045B3BF /* PortletEngine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortletEngine.xcdatamodel; sourceTree = "<group>"; };
+		27A44C87158377D50045B3BF /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Value.h; path = "DataManager/Data Model/Value.h"; sourceTree = "<group>"; };
+		27A44C88158377D50045B3BF /* Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Value.m; path = "DataManager/Data Model/Value.m"; sourceTree = "<group>"; };
+		27A44C8A158377D50045B3BF /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = "DataManager/Data Model/Item.h"; sourceTree = "<group>"; };
+		27A44C8B158377D50045B3BF /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = "DataManager/Data Model/Item.m"; sourceTree = "<group>"; };
+		27A44C8D158377D60045B3BF /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = "DataManager/Data Model/Unit.h"; sourceTree = "<group>"; };
+		27A44C8E158377D60045B3BF /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Unit.m; path = "DataManager/Data Model/Unit.m"; sourceTree = "<group>"; };
+		27A44C90158377D60045B3BF /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filter.h; path = "DataManager/Data Model/Filter.h"; sourceTree = "<group>"; };
+		27A44C91158377D60045B3BF /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Filter.m; path = "DataManager/Data Model/Filter.m"; sourceTree = "<group>"; };
+		27A44C93158377D60045B3BF /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Variable.h; path = "DataManager/Data Model/Variable.h"; sourceTree = "<group>"; };
+		27A44C94158377D60045B3BF /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Variable.m; path = "DataManager/Data Model/Variable.m"; sourceTree = "<group>"; };
+		27A44C96158377D60045B3BF /* Qresult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Qresult.h; path = "DataManager/Data Model/Qresult.h"; sourceTree = "<group>"; };
+		27A44C97158377D60045B3BF /* Qresult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Qresult.m; path = "DataManager/Data Model/Qresult.m"; sourceTree = "<group>"; };
 		27A721B015796AB100907DBC /* BissoServerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BissoServerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A721B415796AB100907DBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27A721B615796AB100907DBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,22 +104,22 @@
 		27A44C10158259490045B3BF /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				2741DA4B1583B299003D55EB /* Filter.h */,
-				2741DA4C1583B299003D55EB /* Filter.m */,
-				2741DA481583B299003D55EB /* Unit.h */,
-				2741DA491583B299003D55EB /* Unit.m */,
-				2741DA451583B299003D55EB /* Qresult.h */,
-				2741DA461583B299003D55EB /* Qresult.m */,
-				2741DA421583B299003D55EB /* Value.h */,
-				2741DA431583B299003D55EB /* Value.m */,
-				2741DA3F1583B299003D55EB /* Item.h */,
-				2741DA401583B299003D55EB /* Item.m */,
-				2741DA3C1583B299003D55EB /* Variable.h */,
-				2741DA3D1583B299003D55EB /* Variable.m */,
+				27A44C1415825AB00045B3BF /* PortletEngine.xcdatamodeld */,
+				27A44C96158377D60045B3BF /* Qresult.h */,
+				27A44C97158377D60045B3BF /* Qresult.m */,
+				27A44C93158377D60045B3BF /* Variable.h */,
+				27A44C94158377D60045B3BF /* Variable.m */,
+				27A44C90158377D60045B3BF /* Filter.h */,
+				27A44C91158377D60045B3BF /* Filter.m */,
+				27A44C8D158377D60045B3BF /* Unit.h */,
+				27A44C8E158377D60045B3BF /* Unit.m */,
+				27A44C8A158377D50045B3BF /* Item.h */,
+				27A44C8B158377D50045B3BF /* Item.m */,
+				27A44C87158377D50045B3BF /* Value.h */,
+				27A44C88158377D50045B3BF /* Value.m */,
 			);
 			name = "Data Model";
-			path = "BissoServerTest/DataManager/Data Model";
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 		27A721A515796AB000907DBC = {
 			isa = PBXGroup;
@@ -191,21 +189,18 @@
 			isa = PBXGroup;
 			children = (
 				27A44C10158259490045B3BF /* Data Model */,
-				2741DA271583B1D0003D55EB /* BBIDataManager.h */,
-				2741DA281583B1D0003D55EB /* BBIDataManager.m */,
-				2741DA1E1583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.h */,
-				2741DA1F1583B198003D55EB /* BBIBWQueryResultParserDelegate.h */,
-				2741DA201583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m */,
-				2741DA211583B198003D55EB /* BBIBWQueryResultParserDelegate.m */,
-				2741DA221583B198003D55EB /* PortletEngine.xcdatamodeld */,
 				27AC92D5157FF03600F29E61 /* BBIDataManager.h */,
 				27AC92D6157FF03600F29E61 /* BBIDataManager.m */,
 				27B0C4CF157FB5FD0044AE9C /* BBIDataManagerProtocol.h */,
+				27A44C2C158263C70045B3BF /* BBIBWQueryResultParserDelegate.h */,
+				27A44C2D158263C70045B3BF /* BBIBWQueryResultParserDelegate.m */,
+				27A44C321582A2EB0045B3BF /* BBIBWQueryResultFilterParserDelegate.h */,
+				27A44C331582A2EB0045B3BF /* BBIBWQueryResultFilterParserDelegate.m */,
 				27B0C4D4157FEB100044AE9C /* BBIBWRunQueryDelegate.h */,
 				27B0C4D0157FBCD00044AE9C /* BBIDataServiceDelegate.h */,
 			);
 			name = "Data Manager";
-			path = BissoServerTest/DataManager;
+			path = BissoServerTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,16 +275,15 @@
 				27A721E015796D7400907DBC /* BBIBissoAuthenticator.m in Sources */,
 				27AC92D7157FF03600F29E61 /* BBIDataManager.m in Sources */,
 				27AC92DB157FF7AA00F29E61 /* BBIDemoPortlet.m in Sources */,
-				2741DA241583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m in Sources */,
-				2741DA251583B198003D55EB /* BBIBWQueryResultParserDelegate.m in Sources */,
-				2741DA261583B198003D55EB /* PortletEngine.xcdatamodeld in Sources */,
-				2741DA291583B1D0003D55EB /* BBIDataManager.m in Sources */,
-				2741DA3E1583B299003D55EB /* Variable.m in Sources */,
-				2741DA411583B299003D55EB /* Item.m in Sources */,
-				2741DA441583B299003D55EB /* Value.m in Sources */,
-				2741DA471583B299003D55EB /* Qresult.m in Sources */,
-				2741DA4A1583B299003D55EB /* Unit.m in Sources */,
-				2741DA4D1583B299003D55EB /* Filter.m in Sources */,
+				27A44C1615825AB00045B3BF /* PortletEngine.xcdatamodeld in Sources */,
+				27A44C2E158263C70045B3BF /* BBIBWQueryResultParserDelegate.m in Sources */,
+				27A44C341582A2EB0045B3BF /* BBIBWQueryResultFilterParserDelegate.m in Sources */,
+				27A44C89158377D50045B3BF /* Value.m in Sources */,
+				27A44C8C158377D50045B3BF /* Item.m in Sources */,
+				27A44C8F158377D60045B3BF /* Unit.m in Sources */,
+				27A44C92158377D60045B3BF /* Filter.m in Sources */,
+				27A44C95158377D60045B3BF /* Variable.m in Sources */,
+				27A44C98158377D60045B3BF /* Qresult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,13 +402,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2741DA221583B198003D55EB /* PortletEngine.xcdatamodeld */ = {
+		27A44C1415825AB00045B3BF /* PortletEngine.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2741DA231583B198003D55EB /* PortletEngine.xcdatamodel */,
+				27A44C5015836C640045B3BF /* PortletEngine.xcdatamodel */,
+				27A44C1515825AB00045B3BF /* PortletEngine old.xcdatamodel */,
 			);
-			currentVersion = 2741DA231583B198003D55EB /* PortletEngine.xcdatamodel */;
-			path = PortletEngine.xcdatamodeld;
+			currentVersion = 27A44C1515825AB00045B3BF /* PortletEngine old.xcdatamodel */;
+			name = PortletEngine.xcdatamodeld;
+			path = "DataManager/Data Model/PortletEngine.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
