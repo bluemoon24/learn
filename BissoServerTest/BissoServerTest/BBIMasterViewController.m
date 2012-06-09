@@ -59,8 +59,7 @@
     
 #pragma mark - temp only
     
-    BBIDemoPortlet *portlet = [[BBIDemoPortlet alloc]init];
-        
+    [[BBIDemoPortlet alloc]init];
  }
 
 - (void)viewDidUnload
@@ -219,6 +218,16 @@
 
 }
 
+#pragma mark - BBIPortlet
+
+- (void) portletDidStartLoading:(BBIPortlet *)portlet
+{
+    NSLog(@"Portlet did start loading");
+}
+- (void) portletDidFinishLoading:(BBIPortlet *)portlet
+{
+    NSLog(@"Portlet loaded: %@", [portlet describePortlet]);
+}
 
 
 

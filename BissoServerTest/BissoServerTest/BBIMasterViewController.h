@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BBIPortletDelegate.h"
 
 @class BBIDetailViewController;
 @class BBIAccountEditorViewController;
 
-@interface BBIMasterViewController : UITableViewController
+@interface BBIMasterViewController : UITableViewController <BBIPortletDelegate>
 
 @property (strong, nonatomic) BBIDetailViewController *detailViewController;
 @property (strong, nonatomic) BBIAccountEditorViewController *accountEditorPopup;

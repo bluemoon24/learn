@@ -9,7 +9,6 @@
 
 #import <CoreData/CoreData.h>
 #import "BBIBWQueryResultParserDelegate.h"
-#import "BBIBWQueryResultFilterParserDelegate.h"
 
 @implementation BBIBWQueryResultParserDelegate
 @synthesize managedObjectContext;
@@ -24,6 +23,8 @@ Value *newValue;
 
 NSString *currentSection;
 NSString *currentElement;
+NSString *tag;
+NSDictionary *fieldNameMapping;
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSMutableDictionary *)attributeDict 
 {
@@ -71,7 +72,10 @@ NSString *currentElement;
         currentSection = @"item";
         
     }
-
+    else if ( [elementName isEqualToString:@"metatdata"]) {
+        currentSection = @"metadata";
+        
+    }
     
 }
 
@@ -96,6 +100,22 @@ NSString *currentElement;
             NSLog(@"Unknown filter element: %@", currentElement);
         }
     }
+    
+    else if ([currentSection isEqualToString:@"metadata"])
+    {
+        if ( [currentElement isEqualToString:@"fieldname"])        
+        {
+            if (!fieldNameMapping) fieldNameMapping = [[NSDictionary alloc]init];
+            [fieldNameMapping setValue:@"" forKey:string];
+            tag = string;
+         }
+        else if ( [currentElement isEqualToString:@"scrtext"])        
+        {
+            if (!fieldNameMapping) fieldNameMapping = [[NSDictionary alloc]init];
+            [fieldNameMapping setValue:string forKey:tag];
+        }
+    }
+
     
     else if ([currentSection isEqualToString:@"variable"])
     {
@@ -153,6 +173,7 @@ NSString *currentElement;
                               inManagedObjectContext:self.managedObjectContext];
 
             newItem.values = [newItem.values setByAddingObject:newValue];
+            newValue.name = [fieldNameMapping objectForKey:currentElement];
 
             if (string != nil) 
                 newValue.value = [NSNumber numberWithFloat:[string floatValue]];                    }

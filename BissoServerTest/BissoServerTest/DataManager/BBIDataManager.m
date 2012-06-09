@@ -26,6 +26,7 @@
 NSMutableString *urlString;
 NSBlockOperation *theQueue;
 NSMutableData *receivedData;
+NSString *serviceInProcess;
 
 - (BBIDataManager *) init
 {
@@ -36,6 +37,8 @@ NSMutableData *receivedData;
 - (void) getData: (NSString *) serviceId
 {
 //    by-sap-b73.bayer-ag.com:8080/rest(bD1lbiZjPTIwMA==)/runquery/default.bsp?issuer=kerberos&instanceid=0&version=2.00&query2run=S_SOA_DUMPDP21D_Q9102&ticket=&cwid=
+
+    serviceInProcess = serviceId;
     
     if ([serviceId isEqualToString:@"BWRunQuery"])
     {
@@ -103,6 +106,9 @@ NSMutableData *receivedData;
 
     [request setEntity:entity];
     
+    if (delegate) [delegate serviceDidStartLoading:serviceInProcess];
+
+    
     NSError *error = nil;
     NSMutableArray *mutableFetchResults = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     
@@ -114,6 +120,8 @@ NSMutableData *receivedData;
     else if (mutableFetchResults.count <= 0) {
         
         NSLog(@"No Qresult in cache. Getting data from service");
+        
+        if (delegate) [delegate serviceWillStartLoadingFromSource:serviceInProcess];
 
         if (!theQueue) theQueue = [[NSBlockOperation alloc] init];
         
@@ -142,6 +150,8 @@ NSMutableData *receivedData;
         Value *value = [item.values anyObject];
         NSLog(@"Any Value's value, unit %@ %@", value.value, value.unit);
         
+        if (delegate) 
+            [delegate serviceDidFinishLoading:serviceInProcess result:qResult];
 //        [self deleteObjectFromContext:qResult];
 
     }

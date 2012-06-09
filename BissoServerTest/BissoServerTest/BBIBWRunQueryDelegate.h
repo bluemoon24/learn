@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Qresult.h"
 
 @protocol BBIBWRunQueryDelegate <NSObject>
 
 - (NSDictionary *) getParametersForBWRunQuery;
-
+- (void) serviceDidFinishLoading: result:(Qresult *)qResult;
+- (void) serviceDidStartLoading;
 @end

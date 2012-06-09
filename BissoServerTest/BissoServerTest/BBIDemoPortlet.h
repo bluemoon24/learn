@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BBIBWRunQueryDelegate.h"
+#import "BBIPortlet.h"
 
-@interface BBIDemoPortlet : NSObject <BBIBWRunQueryDelegate>
+@interface BBIDemoPortlet : BBIPortlet <BBIBWRunQueryDelegate>
 
+- (NSString *) describePortlet;
 - (NSDictionary *) getParametersForBWRunQuery;
-
+- (void) refresh;
+- (BBIDemoPortlet *) init;
 @end
