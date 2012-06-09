@@ -14,6 +14,7 @@
 
 @dynamic unit;
 @dynamic value;
+@dynamic name;
 @dynamic item;
 
 @end

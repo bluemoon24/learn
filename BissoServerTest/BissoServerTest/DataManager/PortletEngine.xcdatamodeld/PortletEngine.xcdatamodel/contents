@@ -26,6 +26,7 @@
         <relationship name="qresult" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Qresult" inverseName="units" inverseEntity="Qresult" syncable="YES"/>
     </entity>
     <entity name="Value" representedClassName="Value" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="values" inverseEntity="Item" syncable="YES"/>
@@ -41,7 +42,7 @@
         <element name="Item" positionX="261" positionY="-18" width="128" height="90"/>
         <element name="Qresult" positionX="225" positionY="-189" width="128" height="135"/>
         <element name="Unit" positionX="394" positionY="156" width="128" height="105"/>
-        <element name="Variable" positionX="61" positionY="12" width="128" height="120"/>
         <element name="Value" positionX="36" positionY="207" width="128" height="90"/>
+        <element name="Variable" positionX="61" positionY="12" width="128" height="120"/>
     </elements>
 </model>

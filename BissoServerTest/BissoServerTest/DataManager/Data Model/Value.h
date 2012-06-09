@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * unit;
 @property (nonatomic, retain) NSNumber * value;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Item *item;
 
 @end

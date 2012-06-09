@@ -12,10 +12,10 @@
 		2741DA261583B198003D55EB /* PortletEngine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA221583B198003D55EB /* PortletEngine.xcdatamodeld */; };
 		2741DA3E1583B299003D55EB /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA3D1583B299003D55EB /* Variable.m */; };
 		2741DA411583B299003D55EB /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA401583B299003D55EB /* Item.m */; };
-		2741DA441583B299003D55EB /* Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA431583B299003D55EB /* Value.m */; };
 		2741DA471583B299003D55EB /* Qresult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA461583B299003D55EB /* Qresult.m */; };
 		2741DA4A1583B299003D55EB /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA491583B299003D55EB /* Unit.m */; };
 		2741DA4D1583B299003D55EB /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA4C1583B299003D55EB /* Filter.m */; };
+		2741DA5C1583D947003D55EB /* Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741DA5B1583D947003D55EB /* Value.m */; };
 		27A44BD115822D5A0045B3BF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A44BD015822D5A0045B3BF /* CoreData.framework */; };
 		27A721B515796AB100907DBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721B415796AB100907DBC /* UIKit.framework */; };
 		27A721B715796AB100907DBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A721B615796AB100907DBC /* Foundation.framework */; };
@@ -47,14 +47,14 @@
 		2741DA3D1583B299003D55EB /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
 		2741DA3F1583B299003D55EB /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		2741DA401583B299003D55EB /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		2741DA421583B299003D55EB /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
-		2741DA431583B299003D55EB /* Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Value.m; sourceTree = "<group>"; };
 		2741DA451583B299003D55EB /* Qresult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Qresult.h; sourceTree = "<group>"; };
 		2741DA461583B299003D55EB /* Qresult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Qresult.m; sourceTree = "<group>"; };
 		2741DA481583B299003D55EB /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
 		2741DA491583B299003D55EB /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
 		2741DA4B1583B299003D55EB /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
 		2741DA4C1583B299003D55EB /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
+		2741DA5A1583D947003D55EB /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
+		2741DA5B1583D947003D55EB /* Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Value.m; sourceTree = "<group>"; };
 		27A44BD015822D5A0045B3BF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		27A721B015796AB100907DBC /* BissoServerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BissoServerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A721B415796AB100907DBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -105,14 +105,15 @@
 		27A44C10158259490045B3BF /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				2741DA221583B198003D55EB /* PortletEngine.xcdatamodeld */,
+				2741DA5A1583D947003D55EB /* Value.h */,
+				2741DA5B1583D947003D55EB /* Value.m */,
 				2741DA4B1583B299003D55EB /* Filter.h */,
 				2741DA4C1583B299003D55EB /* Filter.m */,
 				2741DA481583B299003D55EB /* Unit.h */,
 				2741DA491583B299003D55EB /* Unit.m */,
 				2741DA451583B299003D55EB /* Qresult.h */,
 				2741DA461583B299003D55EB /* Qresult.m */,
-				2741DA421583B299003D55EB /* Value.h */,
-				2741DA431583B299003D55EB /* Value.m */,
 				2741DA3F1583B299003D55EB /* Item.h */,
 				2741DA401583B299003D55EB /* Item.m */,
 				2741DA3C1583B299003D55EB /* Variable.h */,
@@ -196,7 +197,6 @@
 				2741DA1F1583B198003D55EB /* BBIBWQueryResultParserDelegate.h */,
 				2741DA201583B198003D55EB /* BBIBWQueryResultFilterParserDelegate.m */,
 				2741DA211583B198003D55EB /* BBIBWQueryResultParserDelegate.m */,
-				2741DA221583B198003D55EB /* PortletEngine.xcdatamodeld */,
 				27AC92D5157FF03600F29E61 /* BBIDataManager.h */,
 				27AC92D6157FF03600F29E61 /* BBIDataManager.m */,
 				27B0C4CF157FB5FD0044AE9C /* BBIDataManagerProtocol.h */,
@@ -284,10 +284,10 @@
 				2741DA261583B198003D55EB /* PortletEngine.xcdatamodeld in Sources */,
 				2741DA3E1583B299003D55EB /* Variable.m in Sources */,
 				2741DA411583B299003D55EB /* Item.m in Sources */,
-				2741DA441583B299003D55EB /* Value.m in Sources */,
 				2741DA471583B299003D55EB /* Qresult.m in Sources */,
 				2741DA4A1583B299003D55EB /* Unit.m in Sources */,
 				2741DA4D1583B299003D55EB /* Filter.m in Sources */,
+				2741DA5C1583D947003D55EB /* Value.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +412,8 @@
 				2741DA231583B198003D55EB /* PortletEngine.xcdatamodel */,
 			);
 			currentVersion = 2741DA231583B198003D55EB /* PortletEngine.xcdatamodel */;
-			path = PortletEngine.xcdatamodeld;
+			name = PortletEngine.xcdatamodeld;
+			path = ../PortletEngine.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
